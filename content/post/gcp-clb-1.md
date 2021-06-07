@@ -6,9 +6,9 @@ tags:
   - "gcp"
   - "google cloud"
 ---
-GCP CLB를 사용해본 뒤 특징과 서비스에 대해 나름대로 풀어봤습니다.
+GCP CLB를 사용해본 뒤,  서비스의 특징에 대해 사용 후 정리해봤습니다.
 
--by Dominic
+
 
 <!--more-->
 
@@ -53,11 +53,19 @@ CLB는 어느 프로토콜을 지원하는지에 따라 3가지의 종류로 나
 - AWS의 ELB를 사용하던 유저들은 다소 생소할 수 있습니다. 왜냐면 AWS ELB는 FQDN을 통해 ELB를 제공하기 때문입니다. 
 
 이는 AWS ELB의 Node라는 개념에 의해 어쩔 수 없이 Endpoint로 FQDN을 제공할 수 밖에 없는 AWS의 특징입니다. 
-    (상세 내용은 AWS LB에서 ㅎㅎ)
     그러나 GCP CLB는 트래픽을 IP를 통해 받을 수 있도록 프런트엔드에 external IP를 부여할 수 있습니다.
+![This is an image](/img/HC.jpg)
+
+- Global Healthcheck가 존재합니다. (백엔드 서비스의 방화벽에서 필수적으로 Ingress를 허용해줘야 한다. )
 
 
-- **백엔드의 자동 지능형 자동 확장**
+- **백엔드의 자동 지능형 자동 확장 **
+
+  - LB는 SDN 형태로 Software 적으로 만들어진 것이며, 기존의 물리적인 장비가 갖고 있던 하드웨어적 처리 성능 한계를 갖지는 않습니다.
+    \- SDN의 특성 상, 개념적인 하나의 LB가 하나의 Software Process를 의미하지 않으며, 필요에 따라 (백엔드 구성에 맞물려) 실제의 Data Plane을 담당하는 구성요소는 수평 확장되는 구조입니다.
+    \- 위의 특성들에 의해 전반적으로 성능의 한계는 Backend Services의 규모/구성에 의해 결정되는 요소가 오히려 더 크다고 볼 수 있기에 만약 병목현상이 일어난다면 AWS는 node에 대한 이슈까지도 염두해두지만 GCP에서는 QPS에 대한 측정 자료나 Backend latency, Total latency 등의 값을 참고하는 등의 Backend의 이슈 사유를 확인할 수 있다.
+
+
 - 단일 리전에서 애플리케이션을 사용할 때의 리전 부하 분산 
 - 전 세계에서 애플리케이션을 사용할 때의 전역 부하 분산 **(Premium 등급의 Network Tier가 필요)**
 - CLB 백단에 있는 모든 백엔드가 auto scaling되진 않습니다.
@@ -67,13 +75,13 @@ CLB는 어느 프로토콜을 지원하는지에 따라 3가지의 종류로 나
 ![This is an image](/img/session_affi.jpg)
 
 
-- 기본적으로 5-tuple hash 기반의 부하분산을 지원하지만, Statefull한 애플리케이션을 구성했을 경우를 대비하여 세션 어피니티를 지원한다. 
+- 기본적으로 5-tuple hash 기반의 부하분산을 지원하지만, Statefull한 애플리케이션을 구성했을 경우를 대비하여 세션 어피니티를 지원합니다.
 
 ---
 
 ## Cloud Load Balancer 기초
 
-크게 **백엔드 서비스**, **호스트 및 경로규칙(HTTP/s)**, **프런트 엔드**로 나뉘며 각기 항목별 세부적인 항목들이 또 있습니다.
+크게 **백엔드 서비스**, **호스트 및 경로규칙(HTTP/s)**, **프런트 엔드**로 나뉘며 각기 항목별 세부적인 항목들이 있습니다.
 
 #### Backend
 ![This is an image](/img/backend_1.JPG)
@@ -98,44 +106,44 @@ CLB는 어느 프로토콜을 지원하는지에 따라 3가지의 종류로 나
 ### HTTP/HTTPS Load Balancing
 ![This is an image](/img/HTTP_LB.jpg)
 
-7계층에서 동작합니다.
-
-여러가지 백엔드 유형을 지원하며,  **대상 HTTP(S) 프록시**는 클라이언트로부터 요청을 받습니다.
-
-
-
-websocket 을 지원합니다.
-
-
-
-HTTP(S) 프록시는 트래픽 라우팅을 결정하기 위해 URL 맵을 사용하여 요청을 판단(컨텐츠 기반 부하분산)합니다. 
-
-
-
-프록시는 SSL 인증서를 사용하여 통신을 인증할 수도 있습니다.
-
-
-
-세션 유지 시간은 600초로 고정되어있습니다. 
-
-
+- 7계층에서 동작합니다.
+- 여러가지 백엔드 유형을 지원하며,  **대상 HTTP(S) 프록시**는 클라이언트로부터 요청을 받습니다.
+- HTTP(S) 프록시는 트래픽 라우팅을 결정하기 위해 URL 맵을 사용하여 요청을 판단(컨텐츠 기반 부하분산)합니다. 
+- 프록시는 SSL 인증서를 사용하여 통신을 인증할 수도 있습니다.
+- 세션 유지 시간은 600초로 고정되어있습니다. 
 
 (websocket에는 적용되지않지만, 일반적으로 백엔드가 조기에 세션을 끊는 일이 발생하지 않도록 600초보다 길게 KeepAliveTime Out값을 설정하는 것이 좋습니다.)
 
+- websocket을 지원합니다.
+- gPRC를 지원합니다. (AWS ALB에도 2020년 11월 추가됐습니다.)
+- QUIC를 지원합니다 . (Quick UDP Internet COnnections/ HTTP3 )
 
 
-gPRC 를 지원합니다.....!!!!!!!!
 
 ### TCP/UDP Load Balancing
 ![This is an image](/img/tcp_lb.jpg)
 
+- 4 계층에서 동작합니다.
+- pass-through LB 입니다. (글로벌 서비스를 위해 백엔드에서 모든 Ingress IP/port에 대한 허용이 필요합니다. )
+- 수신(ingress)/요청(request) 패킷만 lb를 통과  - 송신(engress)/응답(response) 패킷은 lb를 거치지 않고 바로 client로 가는 DSR로 동작합니다.
+- Proxy가 아닙니다. 
+  - 부하 분산된 패킷은 소스 IP가 변경되지 않은 백엔드 VM에서 수신됩니다.
+  - 부하 분산된 연결은 백엔드 VM에 의해 종료됩니다.
+  - 백엔드 VM의 응답은 부하 분산기를 통하지 않고 클라이언트에 직접 전달됩니다. (위에서 설명한 DSR이 이것입니다.)
 
-흔히  pass-through LB를 알고 있다면 이미 CLB의 TCP LB를 알고있다고해도 무방합니다.
-
-수신(ingress)/요청(request) 패킷만 lb를 통과  - 송신(engress)/응답(response) 패킷은 lb를 거치지 않고 바로 client로 가는 DSR로 동작합니다.
-
-라우팅 알고리즘은 
 ### TCP/UDP Load Balancing
 ![This is an image](/img/tcp_pr_lb.jpg)
 라우팅  알고리즘은 workflow는
 나머진 밥먹고 쓸래...
+
+
+
+
+
+위 기능들은 3번째 포스팅에서 모두 검증해서 보여드릴 예정입니다.
+
+우선 다음 포스팅에서는 사용 간 느꼈던 점들을 풀어보겠습니다.
+
+
+
+감사합니다.

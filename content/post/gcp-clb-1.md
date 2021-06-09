@@ -52,9 +52,6 @@ CLB는 어느 프로토콜을 지원하는지에 따라 3가지의 종류로 나
 
 이는 AWS ELB의 Node라는 개념에 의해 어쩔 수 없이 Endpoint로 FQDN을 제공할 수 밖에 없는 AWS의 특징입니다. 
     그러나 GCP CLB는 트래픽을 IP를 통해 받을 수 있도록 프런트엔드에 external IP를 부여할 수 있습니다.
-![This is an image](/img/HC.jpg)
-
-- Global Healthcheck가 존재합니다. (백엔드 서비스의 방화벽에서 필수적으로 Ingress를 허용해줘야 한다. )
 
 
 - **백엔드의 자동 지능형 자동 확장 **
@@ -190,11 +187,15 @@ MIG는 동일한 구성의 인스턴스를 여러 개 만들기 위한 것입니
 
 ---
 
-### 2. Global HealthCheck..?
+### 2. Global HealthCheck
 
 AWS를 사용할때는 ALB의 sg를 참조하여 백엔드 EC2의 보안그룹을 유연하게 구성했다면, 다행히 GCP LB에서는 LB에 node 개념이 없습니다.
 
 다만, Global HC라고하는  백엔드에 연결하는 전역 및 리전별 상태 확인 시스템을 제공합니다.
+
+![This is an image](/img/HC.jpg)
+
+- Global Healthcheck가 존재합니다. (백엔드 서비스의 방화벽에서 필수적으로 Ingress를 허용해줘야 합니다. )
 
 각 연결 시도를 *프로브*라고 부르고, 각 상태 확인 시스템을 *프로버*라고 부릅니다. 
 
@@ -205,3 +206,36 @@ AWS를 사용할때는 ALB의 sg를 참조하여 백엔드 EC2의 보안그룹�
 위 기능들은 다음 포스팅에서 검증해서 보여드릴 예정입니다.
 
 감사합니다.
+
+### 4. 결론
+
+결론적으로 CLB는 유저의 Ingress/Request에 대한 트래픽을 어떤 방식으로 백엔드에 전달하는가에 따라 종류가 나뉘며
+
+크게는 OSI 7 Layer에 의해 (HTTP, TCP/UDP)로 나뉘며, Traffic Flow 자체는 Front 단에서의 전송방식 및 Egress/Response를 기준으로 구별합니다. (Proxy의 유무)
+
+
+
+HTTP/s or TCP (Proxy) LB의 경우
+
+- IPv4, IPv6 프로토콜을 모두 지원하며, 전달 규칙(Forwarding rule)을 HTTPS proxy에서 URL map을 통해 각 백엔드 서비스로 프록시 처리됩니다. 
+- 네트워크 등급에 따라 Global, Regional LB의 지원 여부가 달라집니다.
+- 기본적으로 균등하게 부하를 분산하지만, 아주 작은 수의 요청은 균등하게 분배되지 않을 수 있습니다
+- Session affinity를 통해 해시를 기반으로 특정 클라이언트의 요청을 동일 백앤드 VM으로 전달하도록 설정 할 수 있습니다. 
+- SSL offloading을 지원합니다. 
+
+
+
+![This is an image](/img/gcp_lb.jpg)
+
+
+
+친절한 GCP에서 제공하는 LB 선택방법입니다. 
+
+
+
+간략하게 특징들에 대해 정리해봤습니다.
+
+
+
+감사합니다.
+

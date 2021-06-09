@@ -1,5 +1,5 @@
 ---
-title: GCP-Cloud Load Balancer...(TEST)
+title: GCP-Cloud Load Balancer(2) 간단테스트
 categories:
   - "cloud"
 tags:

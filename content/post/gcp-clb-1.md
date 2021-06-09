@@ -1,5 +1,5 @@
 ---
-title: GCP-Cloud Load Balancer...(내용정리)
+title: GCP-Cloud Load Balancer(1) 서비스 내용정리
 categories:
   - "cloud"
 tags:

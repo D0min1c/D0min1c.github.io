@@ -23,7 +23,7 @@ GCP CLB 1편 포스팅에 이어 기능들을 모두 테스트해보고 검증�
 ---
 
 ### **[인스턴스 그룹 생성]**
-![This is an image](/img/ig.JPG)
+![This is an image](/img/ig.jpg)
 
 기본적으로 백엔드 서비스는 UIG로 생성할 예정이며 단일 존 내부에 두대의 Web service를 띄워 확인해보겠습니다.
 

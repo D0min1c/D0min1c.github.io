@@ -114,10 +114,6 @@ Timeout으로 설정해둔 (HTTP는 Keep AliveTimeout값이 제한 시간 값을
 ![This is an image](/img/cookie3.jpg)
 
 위 결과, (31초 후 curl -i 동작) 31초마다 세션이 바뀌는걸 확인할 수 있습니다.
- 
-
-### HTTP backend keep-alive time
-
 
 
 ## TCP proxy LB-Test

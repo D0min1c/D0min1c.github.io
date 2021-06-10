@@ -147,26 +147,7 @@ CPU, memory (Custom Metric으로 받아와야합니다.), Volume IO 등 리소�
 [AWS 인스턴스 상태 모니터링 링크](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/WindowsGuide/monitoring-instances-status-check.html)
 
 
-
-그럼 AWS 이슈는 여기서 정리하도록 하고 GCP를 살짝 자랑해보려합니다.
-
-~~(AWS 좋아요 사랑해요)~~ 
-
-
-
-##  GCP Maintenance
-
-GCP의 Compute Engine은 소프트웨어 또는 하드웨어 업데이트와 같은 호스트 시스템 이벤트가 발생하더라도 가상 머신 인스턴스가 계속 실행될 수 있게 해주는 라이브 마이그레이션 기능을 제공합니다.
-
-Compute Engine은 사용자가 VM을 재부팅할 필요 없이 동일 영역에서 실행 중인 인스턴스를 또 다른 호스트로 라이브 마이그레이션합니다.
-
-
-
- 이렇게 해서 Google은 사용자의 VM에 영향을 주지 않으면서도 인프라를 보호하고 안정적인 상태로 유지하는 데 반드시 필요한 유지보수를 수행할 수 있습니다. (GPU가 연결된 인스턴스는 불가능하다는 점 !)
-
-
-
-다만 GCP도 역시 Host Error가 발생합니다.  여러분 세상에 100% 안죽는 서버는 없습니다.  ~~(사장님 저는 안죽습니다)~~
+ 여러분 세상에 100% 안죽는 서버는 없습니다.  ~~(사장님 저는 안죽습니다)~~
 
 그러니 너무 스트레스 받아하지 마세요. 어쩔 수 없는걸요.
 

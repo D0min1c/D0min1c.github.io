@@ -111,11 +111,22 @@ LB는 동일한 쿠키를 사용하는 각 후속 요청에서 같은 백엔드 
 GCLB라는 cookie가 확인됩니다. 쿠키 값을 통해 고정 세션을 유지할 수 있습니다. 영원히 세션이 고정되는것은 아닙니다.
 Timeout으로 설정해둔 (HTTP는 Keep AliveTimeout값이 제한 시간 값을 따라갑니다.) 30초 후엔 새로운 세션이 연결됩니다.
 
-![This is an image](/img/cookie3.jpg)
+![This is an image](/img/cookie_3.jpg)
 
 위 결과, (31초 후 curl -i 동작) 31초마다 세션이 바뀌는걸 확인할 수 있습니다.
 
 ### SSL offloading
+
+CLB 1번 포스팅에 안적어 놓은것 같습니다. 당연하게도..
+
+SSL Offloading을 지원합니다. 물론 서버에서 인증처리를 해도 상관은 없습니다.
+
+433-433 / 433-80 등의 원하시는 트래픽 플로우를 구성할 수 있습니다.
+
+
+
+
+
 ## TCP proxy LB-Test
 
 ## TCP LB-Test

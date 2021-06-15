@@ -1,12 +1,12 @@
 ---
 title: 아니 글쎄 갑자기 인스턴스가 죽었다니까요? - GCP
 categories:
-  - "cloud"
+  - "GCP"
 tags:
   - "gcp"
   - "public cloud"
 ---
-마른하늘의 날벼락 같은 인스턴스 Reboot 현상에 대해 원인과 경험을 적어놨습니다. (feat.GCP는 짧아요)
+마른하늘의 날벼락 같은 인스턴스 Reboot 현상에 대해 원인과 경험을 적어놨습니다. (feat.짧은 글)
 
 <!--more-->
 

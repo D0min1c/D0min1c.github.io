@@ -1,7 +1,7 @@
 ---
 title: GCP-Cloud Load Balancer(1) 내용정리
 categories:
-  - "GCP"
+  - "AWS"
 tags:
   - "gcp"
   - "public cloud"

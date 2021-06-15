@@ -117,11 +117,19 @@ Timeout으로 설정해둔 (HTTP는 Keep AliveTimeout값이 제한 시간 값을
 
 ### SSL offloading
 
-CLB 1번 포스팅에 안적어 놓은것 같습니다. 당연하게도..
+CLB 1번 포스팅에 안적어 놓은것 같습니다. 당연하게도..SSL Offloading을 지원합니다. 그걸 해볼겁니다.
 
-SSL Offloading을 지원합니다. 물론 서버에서 인증처리를 해도 상관은 없습니다.
 
-433-433 / 433-80 등의 원하시는 트래픽 플로우를 구성할 수 있습니다.
+
+AWS에서는 ACM 에서 발급이 가능했다면 GCP 또한 google Managed SSL 인증서를 지원합니다.
+
+Google 관리형 SSL 인증서는 도메인에서 Google Cloud가 가져오고 관리하는 도메인 유효성 검사(DV) 인증서입니다. 각 인증서에서 여러 호스트 이름을 지원하며 Google은 인증서를 자동으로 갱신합니다.
+
+
+
+이를 통해 External HTTPs LB, SSL proxy LB를 구성할 수 있습니다.
+
+​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 
 
 

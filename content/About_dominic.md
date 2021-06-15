@@ -21,7 +21,6 @@ Docs와 구글을 모두 믿지는 마세요. 직접해보고 이해하기 전�
 
 - Written by Dominic (2021)
 
-
 ---
 
 [LinkedIn](http://www.linkedin.com/in/hanseob-lee-9655781aa) | [AWSKRUG](https://awskrug.github.io/) | [2021-목표](https://www.notion.so/2021-ef2b1b5397644b289cbbb278d6ad835a)

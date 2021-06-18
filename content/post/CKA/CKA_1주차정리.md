@@ -1,0 +1,103 @@
+---
+title: CKA 1주차 정리(Netowking)
+categories:
+  - "CKA"
+tags:
+  - "k8s"
+  - "CKA"
+  - "Kubernetes"
+---
+2021-06-15부터 CKA 취득을 위해 이론적으로 공부한 내용들을 데일리로 기록하였습니다.
+<!--more-->
+
+## 배경
+근 3일 간 아주 요란스럽게 k8s설치까지 훑어봤다. 금요일을 맞이하여 네트워크부터 정리를 해보고 부족한 부분을 채워보자.
+
+## 2021-06-18 공부한 내용
+### Container Networking
+- 격리된 환경에서 실행되는 하나의 **프로세스**
+- 위에서 격리된 환경을 구현하는 기술은 chroot, cgroups, namespace
+  - namespace : 네트워크인터페이스, 라우팅, 방화벽 규칙들을 격리한다. 이런 namespace로 인해 격리된 PID들은 veth를 통해 연결한다.
+  - veth : linked virtual ethernet device pair = 항상 쌍 (pair)로 생성되어 연결된 상태를 유지한다.
+
+
+직접 Namespace를 생성해보자.
+
+![This is an image](/img/k8s/ns_1.jpg)
+
+local namespace와 ipnetns add를 통해 만든 namespace에 veth를 붙여봤다.
+
+첫 날 메모해둔 docker networking에 아래와 같은 내용이 있었다.
+
+```
+컨테이너를 새로이 배포할때마다 컨테이너에게 veth0라는 가상 네트워크 인터페이스를 할당하여 docker0에 연결,
+linked virtual ethernet device pair로 컨테이너와 bridge를 연결한다.
+```
+
+그렇다. 똑같은 말을 반복해서 하고 있다.
+
+#### bridge Network
+
+결국 컨테이너 네트워크 인터페이스 (Namesapce 내 veth)들은 bridge(docker0 : docker 시작시 기본적으로 생성되는 bridge)를 통해 연결되어 하나의 세그먼트로 구성되지만, 같은 bridge에 연결되지 않은 컨테이너들은 격리된 공간을 유지한다.
+
+**[eth0 -> docker0(bridge) -> veth0(host) <-[pairing]-> veth0(container) -> container]**
+
+![This is an image](/img/docker_brg.jpg)
+
+위 이미지에서 bridge의 subnet과 Gateway를 보고 밑에 container의 IP를 보면 확실하다.
+
+아니면 brctl show 명령어를 통해 bridge에 연결되어있는 Interface에 veth를 확인하면 된다.
+
+default bridge 말고, custom bridge를 생성하여 별도의 네트워크 구성도 물론 가능하다고 하지만, 해보진 않았으므로 잠시 미뤄두겠다.
+
+#### Host Networking
+
+Host에서 사용하고 있는 네트워크를 그대로 컨테이너가 사용한다. 
+
+그렇기 떄문에 컨테이너에 IP(veth)를 할당하지 않기에 bridge에 바인딩이 되지 않는다.
+
+#### overlay Networking
+
+다른 도커 데몬 host의 container와 통신하기 위해 보통 OS레벨에서의 라우팅이 필요하지만, Overlay 네트워크를 사용하여 분산 네트워크를 구성할 수 있다.
+
+#### none Networking
+none : 모든 네트워킹 드라이버, 그 어떠한 인터페이스도 없는 설정이다. 보통 커스텀 네트워크 드라이버를 구성할 경우 사용한다.
+
+
+### Pod Networking 
+Container Network에서 설명했듯이, 각각의 컨테이너는 독립적인 namesapce를 통해 격리되어진다.
+
+여기서 k8s의 Pods의 개념이 들어가면 같은 pod의 컨테이너들은 Network namespace를 공유한다.(컨테이너가 N개여도 veth는 1개) 그렇기에 동일한 IP를 사용한다.
+
+따라서 lookback 인터페이스를 통해 localhost+port 통신이 가능하다.
+
+이 Pod 내 컨테이너들의 Namespace를 공유해주는게 바로 pause 컨테이너이다.
+ 
+ ### k8s Component
+1. Control Plane
+  - worker node와 클러스터 내 파드를 관리
+    - kube-scheduler : 정의된 replicaset의 요구조건 충족, 노드가 배정되지않은 파드의 배치 등등 스케줄링 역할
+    - kube-apiserver : Control Plane의 FE / API를 노출하는 역할
+    - etcd           : 클러스터의 데이터를 보관하여 일관성을 유지한다는데 **이해가 잘안되는 부분이라 다시 확인해보자**
+    - kube-controller-manager
+      - node-controller
+      - replcation-controller
+      - endpoint-controller
+      - service-account&token-controller 
+    - cloud-controller-manager
+      - node-controller
+      - route-contoller
+      - service-contoller
+
+2. Node Component
+  - worker node 내 pod들을 유지
+    - Kubelet    : k8s를 통해 생성된 Pod 내 컨테이너의 동작에 관여한다. 가령 정확한 스펙에 따라 동작하는지 등..
+    - kube-proxy : 각 worker node에서 실행되는 proxy로 서비스의 개념을 구현한다.
+
+3. CNI (Contanier Network Interface)
+  - Pod가 생성되고 삭제될 때, 호출되는 API의 규격과 인터페이스를 정의해준다. (그니까.. Pod Network를 구축하는 플러그인들)
+  - CNI마다 기본적으로 차지하는 리소스가 있기에 목적에 맞게..사용해야한다. **테스트해서 비교해보자**
+  - 결론적으로 성능이 잘 나와야하고, 부가기능(ACL)을 지원하는 등 목적에 맞게 선택해야 된다. ~~영원한 선택의 늪~~
+
+이정도로 정리해봤다.
+하나씩 테스트해보고 있지만 커멘드가 손에 익으려면 오래걸릴거같다. 이번 주말 동안 문제풀어보고 기록해놔야지...

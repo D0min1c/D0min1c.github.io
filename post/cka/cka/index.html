@@ -1,0 +1,103 @@
+<!doctype html><html class=no-js lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#1b1b1b"><title>CKA를 취득하기 위해 알아두어야 할 것들 | 255.255.248.0</title><script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script><meta name=description content><meta property="og:title" content="CKA를 취득하기 위해 알아두어야 할 것들"><meta property="og:description" content="2021-06-15부터 CKA 취득을 위해 이론적으로 공부한 내용들을 데일리로 기록하였습니다."><meta property="og:type" content="article"><meta property="og:url" content="https://21sub.net/post/cka/cka/"><meta itemprop=name content="CKA를 취득하기 위해 알아두어야 할 것들"><meta itemprop=description content="2021-06-15부터 CKA 취득을 위해 이론적으로 공부한 내용들을 데일리로 기록하였습니다."><meta itemprop=wordCount content="545"><meta itemprop=keywords content="k8s,CKA,Kubernetes,"><meta name=twitter:card content="summary"><meta name=twitter:title content="CKA를 취득하기 위해 알아두어야 할 것들"><meta name=twitter:description content="2021-06-15부터 CKA 취득을 위해 이론적으로 공부한 내용들을 데일리로 기록하였습니다."><link rel=stylesheet href=/css/bundle.css><link rel=stylesheet href=/css/custom.css><link rel=icon href=/icons/16.png sizes=16x16 type=image/png><link rel=icon href=/icons/32.png sizes=32x32 type=image/png><link rel=manifest href=/manifest.json><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-199142344-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class="body kind-page"><header class=header><a class=logo href=/>255.255.248.0</a><nav class="main-nav main-nav--right" role=navigation><button id=toggle class=main-nav__btn aria-label="Menu toggle" aria-expanded=false tabindex=0><div class=main-nav__btn-box tabindex=-1><svg class="main-nav__icon icon-menu" width="18" height="18" viewBox="0 0 18 18"><path class="icon-menu__burger" d="M18 0v3.6H0V0h18zM0 10.8h18V7.2H0v3.6zM0 18h18v-3.6H0V18z"/><path class="icon-menu__x" d="M11.55 9 18 15.45 15.45 18 9 11.55 2.55 18 0 15.45 6.45 9 0 2.55 2.55.0 9 6.45 15.45.0 18 2.55 11.55 9z"/></svg></div></button><ul id=menu class=main-nav__list><li class=main-nav__item><a class=main-nav__link href=/about_dominic/><span class=main-nav__text>About Dominic</span></a></li><li class=main-nav__item><a class=main-nav__link href=/post/certificate/aws-saa/><span class=main-nav__text>AWSKRUG beginner group Study 관련</span></a></li></ul></nav></header><div class=primary><main class=main><nav class="breadcrumb block" aria-label=breadcrumb><ol class=breadcrumb__list><li class=breadcrumb__item><a class=breadcrumbs__link href=/>21sub.net</a></li><li class=breadcrumb__item><a class=breadcrumbs__link href=/post/>Posts</a></li><li class="breadcrumbs__item breadcrumb__item--active" aria-current=page>CKA를 취득하기 위해 알아두어야 할 것들</li></ol></nav><div class="single block"><article class=entry><div class="entry__meta meta mb"><span class="entry__meta-categories meta-categories"><span class=meta-categories__list>Categories:
+<a class=meta-categories__link href=/categories/cka/ rel=category>CKA</a></span></span></div><h1 class=entry__title>CKA를 취득하기 위해 알아두어야 할 것들</h1><div class=entry__content><p>2021-06-15부터 CKA 취득을 위해 이론적으로 공부한 내용들을 데일리로 기록하였습니다.</p><h2 id=배경>배경</h2><p>CKA라는 핑계를 통해, 쿠버네티스에 입문해보자</p><h2 id=cka>CKA</h2><p>작년 11월쯤인가.. CKA할인소식을 듣고 냅다 구매했다가 까먹고 있었다.
+이제 슬..만료일이 다가오는거 같으니, 준비해보자.</p><h2 id=범위>범위</h2><p>총 5가지 과목을 준비해야한다. 참고로 모든 시험은 핸즈온으로 구성되어있다고 한다.</p><ol><li>Cluster Architecture, Installation & COnfiguration (25%)</li></ol><ul><li>역할 기반 액세스 제어(RBAC) 관리</li><li>Kubeadm을 사용하여 기본 클러스터 설치</li><li>고 가용성 Kubernetes 클러스터 관리</li><li>Kubernetes 클러스터를 배포하기위한 기본 인프라 프로비저닝</li><li>Kubeadm을 사용하여 Kubernetes 클러스터에서 버전 업그레이드 수행</li><li>기타 백업 및 복원 구현</li></ul><ol start=2><li>Workloads & Scheduling (15%)</li></ol><ul><li>배포 및 롤링 업데이트 및 롤백 수행 방법 이해</li><li>ConfigMaps 및 Secrets를 사용하여 애플리케이션 구성</li><li>애플리케이션 확장 방법 파악</li><li>강력한 자가 복구 애플리케이션 구현에 사용되는 기본 요소 이해</li><li>리소스 제한이 포드 스케줄링에 미치는 영향 이해</li><li>매니페스트 관리 및 일반적인 템플릿 도구에 대한 인식</li></ul><ol start=3><li>Services & Networking (20%)</li></ol><ul><li>클러스터 노드의 호스트 네트워킹 구성 이해</li><li>포드 간의 연결 이해</li><li>Cluster IP, NodePort, LoadBalancer 서비스 유형 및 엔드 포인트 이해</li><li>수신(Ingress) 컨트롤러 및 수신(Ingress) 리소스 사용 방법 파악</li><li>CoreDNS 구성 및 사용 방법 이해</li><li>적절한 컨테이너 네트워크 인터페이스 플러그인 선택</li></ul><ol start=4><li>Storage (10%)</li></ol><ul><li>스토리지 클래스, 영구 볼륨 이해</li><li>볼륨 모드, 액세스 모드 및 볼륨 회수 정책 이해</li><li>영구 볼륨 클레임 기본 이해</li><li>영구 스토리지로 애플리케이션 구성 방법 이해</li></ul><ol start=5><li>Troubleshooting (30%)</li></ol><ul><li>클러스터 및 노드 로깅 평가</li><li>응용 프로그램 모니터링 방법 이해</li><li>컨테이너 stdout 및 stderr 로그 관리</li><li>응용 프로그램 오류 문제 해결</li><li>클러스터 구성 요소 오류 문제 해결</li><li>네트워킹 문제 해결</li></ul><p>라이브하게 그날 공부한것들을 정리할 예정이다.</p><p>아래부터는 kubeadm으로 AWS EC2에 Kubenetes v1.21.1 설치 히스토리 기록</p><pre><code>1M2K 셋팅 
+공통 설정
+
+#####호스트 명 변경 및 호스트 추가#####
+
+hostnamectl set-hostname k8s-*
+
+/etc/hosts
+
+172.31.4.180 k8s-master
+172.31.40.213 k8s-worker-1
+172.31.39.84 k8s-worker-2
+
+##### selinux 모드확인 ######
+getenforce
+Disabled
+
+##### Swap 메모리 확인 #####
+free
+
+##### 컨테이너 런타임 설치 (docker 예제) #####
+
+yum install -y docker
+systemctl start docker  &amp;&amp; docker info | grep -i version
+Server Version: 20.10.4
+ Cgroup Version: 1
+ containerd version: 05f951a3781f4f2c1911b05e61c160e9c30eaa8e
+ runc version: 12644e614e25b05da6fd08a38ffa0cfe1903fdec
+ init version: de40ad0
+ Kernel Version: 4.14.232-176.381.amzn2.x86_64
+
+##### 컨테이너 런타임 설치 후 cgroup 관리 주체를 systemd로 변경 #####
+overlay2는 리눅스 커널 4.0 이상 또는 3.10.0-514 버전 이상을 사용하는 RHEL 또는 CentOS를 구동하는 시스템에서 선호하는 스토리지 드라이버 
+
+tee /etc/docker/daemon.json &lt;&lt;EOF
+{
+  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
+  &quot;log-driver&quot;: &quot;json-file&quot;,
+  &quot;log-opts&quot;: {
+    &quot;max-size&quot;: &quot;100m&quot;
+  },
+  &quot;storage-driver&quot;: &quot;overlay2&quot;,
+  &quot;storage-opts&quot;: [
+    &quot;overlay2.override_kernel_check=true&quot;
+  ]
+}
+
+EOF
+####Docker 서비스에 대한 systemd 드롭 인 디렉토리 생성#####
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+####데몬 리로드 및 restart [드라이버 셋팅값 확인]####
+systemctl daemon-reload &amp;&amp; systemctl restart docker &amp;&amp; systemctl enable docker
+docker info | grep -i driver
+Storage Driver: overlay2
+Logging Driver: json-file
+Cgroup Driver: systemd
+
+####iptables가 브릿지된 트래픽을 보도록 설정####
+
+cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+br_netfilter
+EOF
+
+cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sudo sysctl --system
+
+####kubeadm, kubelet, kubectl 패키지 설치를 위해 repo설정 ####
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+yum install -y kubelet kubeadm kubectl
+sudo yum install -y tc
+systemctl enable kubelet &amp;&amp; sudo systemctl start kubelet
+-------------------------------템플릿 생성 완료 및 1차 백업-------------------------
+템플릿 AMI로 worker 노드 배포 [sudo kubeadm join 명령어로 Master node에 join]
+-------------------------------Master node 셋팅---------------------------------
+kubeadm init --pod-network-cidr 192.168.0.0/16 [Calico 를 CNI로 쓸예정이기에]
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+CNI설치(칼리코)
+kubectl apply -f https://docs.projectcalico.org/v3.13/manifests/calico.yaml
+
+</code></pre><p>결과 :</p><p><img src=/img/k8s_join.jpg alt="This is an image"></p><h4 id=kubeadm-설치-v121calico>kubeadm 설치 (v1.21|calico)</h4><table><thead><tr><th>Node-hostname</th><th>CPU</th><th>Memory</th><th>Storage</th></tr></thead><tbody><tr><td>k8s-master</td><td>2vcpu</td><td>4GB</td><td>20GB</td></tr><tr><td>k8s-worker-1</td><td>1vcpu</td><td>2GB</td><td>20GB</td></tr><tr><td>k8s-worker-2</td><td>1vcpu</td><td>2GB</td><td>20GB</td></tr></tbody></table><p><img src=/img/kube_info.jpg alt="This is an image"></p></div><footer class=entry__footer><div class=entry__tags><a class="entry__tag btn" href=/tags/k8s/>k8s</a>
+<a class="entry__tag btn" href=/tags/cka/>CKA</a>
+<a class="entry__tag btn" href=/tags/kubernetes/>Kubernetes</a></div></footer></article></div></main><div class="authorbox block"><div class=author><figure class=author__avatar><img class=author__img alt="Dominic avatar" src=/img/avatar.png height=90 width=90></figure><div class=author__body><div class=author__name>Dominic</div><div class=author__bio>Dominic's true identity is unknown. Maybe he is a cute fairy or slave :D</div></div></div></div><div class="related block"><h3 class=related__title>Related</h3><ul class=related__list><li class=related__item><a class=related__link href=/post/cka/cka_%EC%A4%80%EB%B9%84-1210615/>CKA 준비-1 (Netowking)</a></li><li class=related__item><a class=related__link href=/post/cka/cka_%EC%A4%80%EB%B9%84-2210621/>CKA 준비-2 (compenent)</a></li><li class=related__item><a class=related__link href=/post/cka/cka_%EC%A4%80%EB%B9%84-3210622/>CKA 준비-3 (GKE를 써볼까?)</a></li></ul></div><section class="comments block"><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"dominic"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></section></div><footer class=footer><div class="footer__social social"><a class=social__link target=_blank rel="noopener noreferrer" href=https://www.instagram.com/seob.199b><svg class="social__icon" aria-label="Instagram" role="img" width="32" height="32" viewBox="0 0 512 512"><g fill="none" stroke-width="29"><rect height="296" rx="78" width="296" x="108" y="108"/><circle cx="256" cy="256" r="69"/></g><circle cx="343" cy="169" r="19"/></svg></a><a class=social__link target=_blank rel="noopener noreferrer" href=https://linkedin.com/in/hanseob-lee-9655781aa><svg class="social__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg></a><a class=social__link target=_blank rel="noopener noreferrer" href=https://github.com/D0min1c><svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg></a></div><div class=footer__copyright>© 2021 Binario. <span class=footer__copyright-credits>Powered by <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/vimux/binario rel="nofollow noopener" target=_blank>Binario</a> theme.</span></div></footer><script src=/js/menu.js></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script><script src=/js/custom.js></script></body></html>

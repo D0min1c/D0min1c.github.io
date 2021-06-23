@@ -1,0 +1,60 @@
+# section information
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Cloud
+  filter: "Cloud"
+- name: Certification
+  filter: "Certification"
+- name: Hobby
+  filter: "hobby"
+
+# your projects
+projects:
+- name: Kubernetes study
+  logo: /images/sections/projects/kubernetes.png
+  role: k8s
+  timeline: "Jun 2021 - Present"
+  repo: https://d0min1c.github.io
+   # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: CKA를 위한 여정
+  tags: ["CKA", "Certification"]
+
+- name: 2021 Certified Planner
+  logo: /images/sections/projects/cloud.png
+  role: hobby
+  timeline: "Comming soon"
+  repo: https://github.com/D0min1c/certification
+   # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: CKA를 위한 여정
+  tags: ["CKA", "Certification"]
+
+- name: Terraform on Cloud (GCP, AWS)
+  logo: /images/sections/projects/terraform.png
+  role: Infra management
+  timeline: "Dec 2020 - Present"
+  repo: https://github.com/D0min1c/
+  #url: ""
+  summary: GCP와 AWS 인프라 모듈화 (5%..5.5%..😂)
+  tags: [ "IaC", "terraform", "AWS", "GCP"]
+
+  
+#- name: AWS Beginner 모임
+#  logo: /images/sections/projects/beginner.jpg
+#  role: Just hobby
+#  timeline: "Aug 2021 - Present"
+#  #url: ""
+#  summary: AWSKRUG - Beginner Groups 자료들
+#  tags: ["hobby", "Cloud"]

@@ -1,0 +1,80 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Cloud Infra Engineer
+# your company information
+company:
+  name: GamevilCom2usPlatform
+#  url: "https://platform.gamevilcom2us.com/"
+
+# your resume. this file path should be relative to you "static" directory
+#resume: "files/resume.pdf"
+
+# a summary about you
+summary: 'I am a passionate cloud infrastructure engineer with 3 years of hands-on experience.
+As an AWS Customer Support Engineer at Megazone Cloud, for about two years, I have been actively solving clients cloud-based issues and run their businesses smoothly.
+
+But now I work for a game company.
+The main tasks are to operate the entire Cloud (AWS, GCP) infrastructure of the game, deploy directly through the Terraform module, and manage resource monitoring through Prometheus and Grafana.
+'
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+#- name: Email
+#  icon: "fas fa-envelope"
+#  url: "example@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/D0min1c"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://linkedin.com/in/hanseob-lee-9655781aa"
+
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
+badges:
+- type: certification
+  name: Google Cloud Certified - Professional Cloud Architect
+  url: "https://images.credly.com/size/340x340/images/91da9e27-bca5-4b1f-8b45-ae2828bae7bb/blob.png"
+  badge: "https://images.credly.com/size/340x340/images/91da9e27-bca5-4b1f-8b45-ae2828bae7bb/blob.png"
+
+- type: certification
+  name: AWS Certified Solutions Architect - Professional
+  url: "https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-professional"
+  badge: "https://images.credly.com/size/340x340/images/8e968853-15af-4bbc-9d03-cf518971909c/AWS-SolArchitect-Professional-2020.png"
+
+- type: certification
+  name: AWS Certified Security - Specialty
+  url: "https://www.credly.com/org/amazon-web-services/badge/aws-certified-security-specialty"
+  badge: "https://images.credly.com/size/340x340/images/ee741c0c-3d57-48e0-82e0-699a2170aa50/AWS-Security-Specialty-2020.png"
+
+- type: soft-skill-indicator
+  name: Cloud Computing
+  percentage: 85
+  color: blue
+
+- type: soft-skill-indicator
+  name: Management
+  percentage: 95
+  color: yellow
+
+- type: soft-skill-indicator
+  name: Co-working
+  percentage: 80
+  color: orange
+
+# you can also provide color code instead of the color name
+# - type: soft-skill-indicator
+#   name: Example 1
+#   percentage: 75
+#   color: "#00adb5"

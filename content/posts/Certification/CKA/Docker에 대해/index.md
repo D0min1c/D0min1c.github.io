@@ -154,9 +154,9 @@ docker build -t dominic-web:0.2 .
 
 curl로 확인해보니, httpd default page가 쫙~~나오네요. 다음엔 index.html을 좀 추가해야될듯 ㅎㅎ;
 
-간단하게 docker 테스트 진행해봤다.
+간단하게 docker 테스트 진행해봤습니다.
 
-이후 docker push를 통해 내 GCR로 이미지를 푸쉬하는거까지 진행하였으나, 그부분은 Docs로 대체하겠다.
+이후 docker push를 통해 내 GCR로 이미지를 푸쉬하는 부분은 GCP Docs로 대체하겠습니다.
 
 [이미지 내보내기](https://cloud.google.com/container-registry/docs/pushing-and-pulling)
 

@@ -4,7 +4,7 @@ date: 2020-06-23
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: 서버가 갑자기 박살나셨습니다. -GCP
+    name: GCP 이슈(리소스 부족 등)
     identifier: GCP(issue)
     parent: GCP
     weight: 10

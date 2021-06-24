@@ -4,7 +4,7 @@ date: 2020-06-22
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: 서버가 갑자기 박살나셨습니다. -AWS
+    name: AWS이슈 (Host error)
     identifier: AWS(Host_issue)
     parent: AWS
     weight: 10

@@ -71,10 +71,10 @@ params:
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
 
-  # If you want to use different country flag for a language, specify them here.
+  ## If you want to use different country flag for a language, specify them here.
   # flagOverwrites:
-  # - languageCode: en
-  #   countryCode: us
+  # - languageCode: ko
+  #   countryCode: kr
 
   # Provide footer configuration.
   footer:

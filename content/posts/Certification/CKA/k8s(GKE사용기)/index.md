@@ -1,6 +1,6 @@
 ---
 title: "k8s(GKE사용기)"
-date: 2020-06-20
+date: 2021-06-20
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:

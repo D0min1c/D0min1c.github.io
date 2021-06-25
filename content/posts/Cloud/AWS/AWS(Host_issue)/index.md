@@ -1,6 +1,6 @@
 ---
 title: "서버가 갑자기 박살나셨습니다. -AWS"
-date: 2020-06-22
+date: 2021-06-22
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:

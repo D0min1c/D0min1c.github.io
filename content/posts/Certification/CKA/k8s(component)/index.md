@@ -1,6 +1,6 @@
 ---
 title: "k8s(component)"
-date: 2020-06-17
+date: 2021-06-17
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:

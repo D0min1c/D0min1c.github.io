@@ -1,11 +1,11 @@
 ---
 title: "k8s(GKE사용기)"
-date: 2021-06-20
+date: 2021-06-26
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: k8s(GKE사용기)
-    identifier: k8s(GKE사용기)
+    name: k8s(GKE-Pod)
+    identifier: k8s(GKE-Pod)
     parent: CKA
     weight: 10
 hero: images/CKA_thumnail.jpg
@@ -113,5 +113,3 @@ brctl show cbr0
  GKE를 한번 써본 것으로 좀 더 kube~명령어에 익숙해진 느낌이랄까...😅😅
 
 ~~기분탓일지도 모른다.~~
-
-일단 CKA는 기간이 조금 남았으니, 스케줄을 잘 조절해서 한방에 취득해보자...

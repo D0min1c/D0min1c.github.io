@@ -10,7 +10,7 @@ menu:
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---
-CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.
+GKE를 생성해서 kubectl에 익숙해져보자.
 <!--more-->
 ### GKE(google Kubernetes Engine)
 

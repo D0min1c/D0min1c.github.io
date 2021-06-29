@@ -64,7 +64,8 @@ kubernetes   ClusterIP      10.3.240.1    <none>          443/TCP        14m
 nginx        LoadBalancer   10.3.255.47   34.122.123.30   80:31317/TCP   77s
 ```
 
-**조회결과**
+**결과**
+
 ![This is an image](images/gke_1_1.jpg)
 
 ### pod 상세 조회해보기
@@ -122,6 +123,7 @@ kubectl label pods nginx-56cd7f6b6-2nc6l 'name:dominic'
 
 
 **결과**
+
 ![This is an image](images/gke_1_1.jpg)
 
 ### 결론
@@ -133,8 +135,9 @@ kubectl label pods nginx-56cd7f6b6-2nc6l 'name:dominic'
 또는 한 서비스에서 다른 네임스페이스 또는 다른 클러스터의 서비스를 지정하려고 한다.
 
 혹은 워크로드를 쿠버네티스로 마이그레이션하고 있다. 해당 방식을 평가하는 동안, 쿠버네티스에서는 백엔드의 일부만 실행한다.
+간혹 몇몇의 케이스에 따라 별도의 파드 셀렉터 없이 서비스를 정의하는 것이 가능하다.
 
-위와 같은 경우 별도의 파드 셀렉터 없이 서비스를 정의하는 것이 가능하다.
+## 사례 1.
 ```
 apiVersion: v1
 kind: Service
@@ -149,6 +152,7 @@ spec:
 
 이 서비스에는 셀렉터가 없으므로, 해당 엔드포인트 오브젝트가 자동으로 생성되지 않는다. 엔드포인트 오브젝트를 수동으로 추가하여, 서비스를 실행 중인 네트워크 주소 및 포트에 서비스를 수동으로 매핑할 수 있다.
 
+## 사례 2.
 ```
 apiVersion: v1
 kind: Endpoints

@@ -99,3 +99,5 @@ kubectl get ingress ingress-resource
 
 **다른경로 접근 시 결과 (default backend 동작 확인)**
 ![This is an image](images/test_2.jpg)
+
+간단하게 LB와 Ingress의 차이를 확인해보았다.

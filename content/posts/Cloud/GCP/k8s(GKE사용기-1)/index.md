@@ -1,12 +1,12 @@
 ---
-title: "k8s(GKE사용기)"
+title: "k8s(GKE-Pod)"
 date: 2021-06-26
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
     name: k8s(GKE-Pod)
     identifier: k8s(GKE-Pod)
-    parent: CKA
+    parent: GCP
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---

@@ -10,7 +10,7 @@ menu:
     weight: 10
 hero: images/host_thumnail.jpg
 ---
-AWS EC2 세대교체에 대한 경험을 메모해두었습니다.
+AWS EC2의 nitro 타입과 세대 변경 간 확인해야되는 부분 등 경험을 기록해봤습니다.
 <!--more-->
 
 ## 배경

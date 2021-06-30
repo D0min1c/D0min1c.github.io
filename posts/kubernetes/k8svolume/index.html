@@ -1,0 +1,111 @@
+<!doctype html><html><head><title>k8s(Volume)</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><link rel=stylesheet href=/css/bootstrap.min.css><link rel=stylesheet href=/css/layouts/main.css><link rel=stylesheet href=/css/navigators/navbar.css><link rel=stylesheet href=/css/plyr.css><link rel=stylesheet href=/css/flag-icon.min.css><link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css><link rel=icon type=image/png href=/images/site/favicon_hu1d79931af21da1953430965fd067c561_13812_42x0_resize_q75_box.JPG><meta property="og:title" content="k8s(Volume)"><meta property="og:description" content="Sample post with multiple images, embedded video ect."><meta property="og:type" content="article"><meta property="og:url" content="https://hugo-toha.github.io/posts/kubernetes/k8svolume/"><meta property="article:published_time" content="2021-06-29T00:00:00+00:00"><meta property="article:modified_time" content="2021-06-29T00:00:00+00:00"><meta name=description content="Sample post with multiple images, embedded video ect."><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css><link rel=stylesheet href=/css/layouts/single.css><link rel=stylesheet href=/css/navigators/sidebar.css><link rel=stylesheet href=/css/style.css><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-199142344-2','auto');ga('send','pageview');}</script></head><body data-spy=scroll data-target=#TableOfContents data-offset=80><div class="container-fluid bg-dimmed wrapper"><nav class="navbar navbar-expand-xl top-navbar final-navbar shadow"><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
+<span class=navbar-toggler-icon></span></button>
+<a class=navbar-brand href=/><img src=/images/site/main-logo_hu1d79931af21da1953430965fd067c561_13812_42x0_resize_q75_box.JPG alt=Logo>
+255.255.248.0</a>
+<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse lang-selector" id=top-nav-items><ul class="navbar-nav ml-auto"></ul></div></div><img src=/images/site/main-logo_hu1d79931af21da1953430965fd067c561_13812_42x0_resize_q75_box.JPG class=d-none id=main-logo alt=Logo>
+<img src=/images/site/inverted-logo_hu1d79931af21da1953430965fd067c561_13812_42x0_resize_q75_box.JPG class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><a href=/posts/about_dominic/ title=😎About_dominic😎>😎About_dominic😎</a></li><li><i class="fas fa-plus-circle"></i><a href=/posts/cloud/>Cloud</a><ul><li><i class="fas fa-plus-circle"></i><a href=/posts/cloud/aws/>AWS</a><ul><li><a href=/posts/cloud/aws/awshost_issue/ title="AWS이슈 (Host error)">AWS이슈 (Host error)</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/cloud/gcp/>GCP</a><ul><li><a href=/posts/cloud/gcp/gcpissue-1/ title="GCP 이슈 (갑.서.박)">GCP 이슈 (갑.서.박)</a></li><li><a href=/posts/cloud/gcp/gcpnetwork-1/ title="GCP-VPC 기초 1편">GCP-VPC 기초 1편</a></li><li><a href=/posts/cloud/gcp/gcpnetwork-2/ title="GCP-VPC 기초 2편">GCP-VPC 기초 2편</a></li><li><a href=/posts/cloud/gcp/k8sgke-pod/ title=k8s(GKE-Pod)>k8s(GKE-Pod)</a></li><li><a href=/posts/cloud/gcp/k8sgke-service/ title=k8s(GKE-Service)>k8s(GKE-Service)</a></li><li><a href=/posts/cloud/gcp/k8sgke-volume/ title=k8s(GKE-volume)>k8s(GKE-volume)</a></li></ul></li></ul></li><li><i class="fas fa-minus-circle"></i><a class=active href=/posts/kubernetes/>Kubernetes</a><ul class=active><li><a href=/posts/kubernetes/k8snetworking/ title=k8s(Networking)>k8s(Networking)</a></li><li><a href=/posts/kubernetes/k8scomponent/ title=k8s(component)>k8s(component)</a></li><li><a href=/posts/kubernetes/k8singress/ title=k8s(Ingress)>k8s(Ingress)</a></li><li><a class=active href=/posts/kubernetes/k8svolume/ title=k8s(Volume)>k8s(Volume)</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/certification/>Certification</a><ul><li><a href=/posts/certification/cka/ title=CKA>CKA</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://hugo-toha.github.io/posts/kubernetes/k8svolume/images/CKA_thumnail.jpg)></div><div class=page-content><div class="author-profile ml-auto align-self-lg-center"><img class=rounded-circle src=/images/author/dominic_hue8656283646074d0d4d459b13fee860e_56605_120x120_fit_box_2.png alt="Author Image"><h5 class=author-name>dominic</h5><p>June 29, 2021</p></div><div class=title><h1>k8s(Volume)</h1></div><div class=post-content id=post-content><p>CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.</p><h2 id=배경>배경</h2><p>컨테이너의 파일은 호스트의 파일 시스템에 마운트되어 있다. 컨테이너는 이미지로부터 만들어지므로 크게 다음의 호스트 파일 경로에 마운트된다.</p><ul><li>이미지의 파일 내용을 저장하는 호스트 파일 경로(이미지는 실제로 레이어로 구성되므로 여러 경로 사용)</li><li>컨테이너 구동 이후 변경 사항을 저장하기 위한 호스트 파일 경로</li></ul><p>이 외에 &ndash;mount 옵션을 이용해서 호스트 파일 시스템이나 도커 볼륨에 마운트 할 수 있다.</p><p>docker inspect 명령어를 사용하면 호스트 파일 시스템에 마운트된 경로를 확인할 수 있다.</p><p>그러면 쿠버네티스는 어떤 개념의 볼륨들이 있고, 어떻게 사용하는지 궁금해졌다.</p><h3 id=도커-볼륨>도커 볼륨</h3><p>컨테이너 내의 디스크는 임시 디스크이다. 그렇기에 컨테이너가 터질때마다 컨테이너 내 데이터가 사라질 수 밖에 없다.</p><p>그렇기에 도커 볼륨을 이용해서 host directory에서 데이터를 관리하는 방법이 생겼다.
+이렇게 되면 컨테이너를 지워도 도커 볼륨과 컨테이너를 연결한다면 데이터는 그대로 유지할 수 있게되었다.
+그렇지만 결국 도커 볼륨을 사용한다는 것은 도커에 의해 관리된다는 걸 뜻할 수 있다 (어떤 컨테이너에 연결되어있는지 등 관리가 편하다.)</p><pre><code>docker volume create
+</code></pre><p>위 명령어로 볼륨을 생성하면 생성된 볼륨은 호스트 디렉토리인 /var/lib/docker/volumes/ 에 저장된다.</p><p>말고 바로 Host bind Mount하여 사용하는 방식도 있다.
+이 방법은 기능적으로는 docker volume과 유사하지만 도커의 관리 없이 Host Directory와 마운트를 하다 보니</p><p>컨테이너에서 호스트의 파일 시스템에 접근하여 컨테이너에 지정된 파일이 아닌 다른 파일을 삭제/추가/수정할 수 있다는 것이 단점이다.</p><p>이 기능은 호스트 시스템의 비 Docker 프로세스에 영향을 주는 것을 포함하여 보안에 영향을 미칠 수 있기에 권장하지 않고있다.</p><p>이외에도 메모리에 데이터를 저장하는 tmpfs 마운트 방식도 있다. 마치 쿠버의 secret처럼 메모리에 저장되며 휘발성을 따라간다.</p><p>여기까진 도커의 볼륨 개념을 정리했다면 쿠버에서는 어떤 유형의 볼륨을 지원하는지 체크해보자.</p><h3 id=k8s-볼륨>k8s 볼륨</h3><p>파드는 여러 볼륨 유형을 동시에 사용할 수 있다. 임시 볼륨 유형은 파드의 수명을 갖지만, <strong>퍼시스턴트 볼륨</strong>은 파드의 수명을 넘어 존재한다.</p><p>파드가 더 이상 존재하지 않으면, 쿠버네티스는 임시(ephemeral) 볼륨을 삭제하지만,
+퍼시스턴트(persistent) 볼륨은 삭제하지 않는다. 볼륨의 종류와 상관없이, 파드 내의 컨테이너가 재시작되어도 데이터는 보존된다.</p><p>볼륨을 사용하려면, .spec.volumes 에서 파드에 제공할 볼륨을 지정하고 .spec.containers[*].volumeMounts 의 컨테이너에 해당 볼륨을 마운트할 위치를 선언한다.</p><h4 id=퍼시스턴트-볼륨과-퍼시스턴트-볼륨-클래임>퍼시스턴트 볼륨과 퍼시스턴트 볼륨 클래임</h4><p>퍼시스턴트볼륨 (PV)은 관리자가 프로비저닝하거나 스토리지 클래스를 사용하여 동적으로 프로비저닝한 클러스터의 스토리지이다. 노드가 클러스터 리소스인 것처럼 PV는 클러스터 리소스이다. PV는 Volumes와 같은 볼륨 플러그인이지만, PV를 사용하는 개별 파드와는 별개의 라이프사이클을 가진다. 이 API 오브젝트는 NFS, iSCSI 또는 클라우드 공급자별 스토리지 시스템 등 스토리지 구현에 대한 세부 정보를 담아낸다.</p><p>퍼시스턴트볼륨클레임 (PVC)은 사용자의 스토리지에 대한 요청이다. 파드와 비슷하다. 파드는 노드 리소스를 사용하고 PVC는 PV 리소스를 사용한다. 파드는 특정 수준의 리소스(CPU 및 메모리)를 요청할 수 있다. 클레임은 특정 크기 및 접근 모드를 요청할 수 있다(예: ReadWriteOnce, ReadOnlyMany 또는 ReadWriteMany로 마운트 할 수 있음. AccessModes )</p><p>정리해보자면 퍼시스턴트 볼륨은 그냥 디스크 그 자체이다. 어떤 파드에 어느정도의 볼륨을 파티셔닝할지는 퍼시스턴트 볼륨 클래임을 통해 생성하고 접근 방식을 지정한다.</p><p>퍼시스턴트볼륨클레임(PersistentVolumeClaim)을 사용하도록 파드를 설정해보자.</p><h3 id=pv-pvc-정적-프로비저닝>PV-PVC 정적 프로비저닝</h3><p>그전에 우선 /mnt/data에 index.html파일을 하나 생성해두었다.</p><pre><code>vi test-pv.yaml
+----------------------------
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: &quot;/mnt/data&quot;
+</code></pre><p>퍼시스턴스 볼륨 구성 내용은 위와 같다. (10Gi, R/W_Once, Path= /mnt/data)
+스토리지 클래스 네임을 정의하여 퍼시스턴트볼륨클래임의 바인딩을 사는데 사용한다.</p><p>일단 PV를 생성하고 조회해보자.</p><pre><code>kubectl apply -f test-pv.yaml
+kubectl get pv
+&lt;--결과값--&gt;
+NAME             CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+test-pv-volume   10Gi        RWO            Retain           Available           manual                  1m
+</code></pre><p>PV를 조회했더니 뭔가 항목이 많이보인다. 각 항목이 의미하는 바는 아래와 같다.</p><ol><li>NAME : PV 명</li><li>CAPACITY : PV 용량</li><li>ACCESS MODES : 접근 모드 설정 (단일노드 r/w/멀티노드 r,r/w)</li><li>RECLAIM POLICY : 회수 정책 (retain, Recycle, Delete)</li><li>STATUS : 상태</li><li>CLAIM : 현재 바인딩되어있는 클레임</li><li>STORAGECLASS : 특정 클래스의 PV를 가지면 해당 클래스에 요청하는 PVC만 바인딩된다.</li></ol><pre><code>vi test-pv-claim.yaml
+----------------------------
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+</code></pre><p>퍼시스턴스 볼륨 클래임 구성 내용은 위와 같다. (5Gi)
+마찬가지로 퍼시스턴트 볼륨 클래임을 생성하고 조회해보자.</p><pre><code>kubectl apply -f test-pv-claim.yaml
+kubectl get pvc
+&lt;--결과값--&gt;
+NAME            STATUS   VOLUME           CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+test-pv-claim   Bound    test-pv-volume   5Gi        RWO            manual         7s
+</code></pre><p>다시 pv를 조회해보면, Status와 CLAIM이 업데이트된걸 볼 수 있다.</p><pre><code>kubectl get pv
+&lt;--결과값--&gt;
+NAME             CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                   STORAGECLASS   REASON   AGE
+test-pv-volume   5Gi        RWO            Retain           Bound    default/test-pv-claim   manual                   1m
+
+</code></pre><p>그럼 이제 생성한 클레임을 파드에 붙여보자.</p><pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pv-pod
+spec:
+  volumes:
+    - name: test-pv-storage
+      persistentVolumeClaim:
+        claimName: test-pv-claim
+  containers:
+    - name: test-pv-container
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: &quot;http-server&quot;
+      volumeMounts:
+        - mountPath: &quot;/usr/share/nginx/html&quot;
+          name: test-pv-storage
+</code></pre><pre><code>kubectl apply -f test-pv-pod.yaml
+kubectl get pod test-pv-pod
+&lt;--결과값--&gt;
+윽, 캡쳐를 못했다. 혹여 파드가 pending상태라면 kubectl describe를 통해 파드의 상태를 확인해보면 로그가 딱 보일것이다. 
+</code></pre><p>exec 명령어로 쉘에 접근하여 실제 hostpath(/mnt/data)볼륨으로부터 index.html를 제공받았는지 체크해보자.</p><pre><code>kubectl exec -it test-pv-pod -- /bin/bash
+  curl http://localhost/
+   Hello from Kubernetes storage
+  exit
+</code></pre><p>host에 생성해둔 index.html이 잘불러와진다.</p><h3 id=동적-프로비저닝>동적 프로비저닝</h3><p>동적 볼륨 프로비저닝의 구현은 storage.k8s.io API 그룹의 StorageClass API 오브젝트를 기반으로 한다. 클러스터 관리자는 볼륨을 프로비전하는 볼륨 플러그인 (프로비저너라고도 알려짐)과 프로비저닝시에 프로비저너에게 전달할 파라미터 집합을 지정하는 StorageClass 오브젝트를 필요한 만큼 정의할 수 있다.</p><p>그러기 위해선 스토리 클래스 오브젝트를 사전에 생성해 두어야 한다.</p><h4 id=동적-프로비저닝-오브젝트-예시-googlecloud>동적 프로비저닝 오브젝트 예시 (Googlecloud)</h4><pre><code>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: slow
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+</code></pre><pre><code>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
+</code></pre><h4 id=동적-프로비저닝-사용>동적 프로비저닝 사용</h4><p>사용자는 PersistentVolumeClaim 오브젝트의 storageClassName 필드를 사용해야 한다.
+이 필드의 값은 관리자가 구성한 StorageClass 의 이름과 일치해야 한다.</p><p>예를 들어 &ldquo;fast&rdquo; 스토리지 클래스를 선택하려면 다음과 같은 PersistentVolumeClaim 을 생성한다.</p><pre><code>apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: fast
+  resources:
+    requests:
+      storage: 30Gi
+</code></pre><p>이런 식으로 클레임을 구성하면 자동으로 볼륨이 프로비저닝된다.</p><p>그렇담 애초에 스토리지 클래스가 지정되지않은 모든 클래임들이 자동으로 동적 프로비저닝을 사용하면 관리하기 얼마나 편할까?
+master-cluster에서 설정이 가능하다.</p><p>storageclass.kubernetes.io/is-default-class 어노테이션을 추가해서 특정 StorageClass 를 기본으로 표시할 수 있다. 기본 StorageClass 가 클러스터에 존재하고 사용자가 storageClassName 를 지정하지 않은 PersistentVolumeClaim 을 작성하면, DefaultStorageClass 어드미션 컨트롤러가 디폴트 스토리지 클래스를 가리키는 storageClassName 필드를 자동으로 추가한다.</p><p>끝 ~_~</p></div><hr><div class="row next-prev-navigator"></div><hr></div></div></div><a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center pl-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><a href=#배경>배경</a><ul><li><a href=#도커-볼륨>도커 볼륨</a></li><li><a href=#k8s-볼륨>k8s 볼륨</a><ul><li><a href=#퍼시스턴트-볼륨과-퍼시스턴트-볼륨-클래임>퍼시스턴트 볼륨과 퍼시스턴트 볼륨 클래임</a></li></ul></li><li><a href=#pv-pvc-정적-프로비저닝>PV-PVC 정적 프로비저닝</a></li><li><a href=#동적-프로비저닝>동적 프로비저닝</a><ul><li><a href=#동적-프로비저닝-오브젝트-예시-googlecloud>동적 프로비저닝 오브젝트 예시 (Googlecloud)</a></li><li><a href=#동적-프로비저닝-사용>동적 프로비저닝 사용</a></li></ul></li></ul></li></ul></nav></div></div></section></div><script type=text/javascript src=/js/jquery-3.4.1.min.js></script><script type=text/javascript src=/js/popper.min.js></script><script type=text/javascript src=/js/bootstrap.min.js></script><script type=text/javascript src=/js/navbar.js></script><script type=text/javascript src=/js/plyr.js></script><script type=text/javascript src=/js/main.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script><script src=/js/single.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

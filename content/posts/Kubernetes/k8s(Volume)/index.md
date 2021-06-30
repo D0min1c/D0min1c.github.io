@@ -10,7 +10,7 @@ menu:
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---
-CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.
+컨테이너의 볼륨관리와 나아가 kubernetes의 볼륨은 어떻게 관리되는지 기록해봤습니다.
 <!--more-->
 
 ## 배경

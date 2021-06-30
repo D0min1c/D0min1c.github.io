@@ -10,7 +10,7 @@ menu:
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---
-CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.
+기본적인 kubernetes의 구성요소들에 대해 간단하게 기록했습니다.
 <!--more-->
 ## k8s Architecture
 

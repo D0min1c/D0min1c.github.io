@@ -10,11 +10,8 @@ menu:
     weight: 1
 hero: images/CKA_thumnail.jpg
 ---
-CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.
+컨테이너 Network부터 Pod Network까지 기록해봤습니다.
 <!--more-->
-
-## 배경
-컨테이너 Network부터 Pod Network까지 이론정리
 
 ### Docker Networking
 - 격리된 환경에서 실행되는 하나의 **프로세스**

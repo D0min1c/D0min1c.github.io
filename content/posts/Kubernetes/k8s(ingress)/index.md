@@ -10,10 +10,8 @@ menu:
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---
-CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.
+Service의 LB와 Ingress의 차이가 이해되지 않아 간단하게 정리해서 기록해두었습니다.
 <!--more-->
-### 배경
-테스트를 몇번 진행하다가 Service의 LB와 Ingress의 차이가 이해되지 않아 몇자 적어봅니다.
 
 ### Service (LB) vs Ingress
 우선 두가지 모두 내 파드 안에 띄워놓은 컨테이너들(애플리케이션)을 노출하고자할때 사용하는게 맞다.

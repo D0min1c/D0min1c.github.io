@@ -4,8 +4,8 @@ date: 2021-06-23
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: GCP 이슈(리소스 부족 등)
-    identifier: GCP(issue)
+    name: GCP 이슈 (갑.서.박)
+    identifier: GCP(issue-1)
     parent: GCP
     weight: 10
 hero: images/host_thumnail.jpg

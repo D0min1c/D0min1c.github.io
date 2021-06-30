@@ -6,8 +6,8 @@ menu:
   sidebar:
     name: k8s(Networking)
     identifier: k8s(Networking)
-    parent: CKA
-    weight: 10
+    parent: Kubernetes
+    weight: 1
 hero: images/CKA_thumnail.jpg
 ---
 CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록하였습니다.

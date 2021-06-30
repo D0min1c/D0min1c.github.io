@@ -4,5 +4,5 @@ menu:
   sidebar:
     name: Certification
     identifier: Certification
-    weight: 20
+    weight: 5
 ---

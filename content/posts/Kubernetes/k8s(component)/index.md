@@ -6,7 +6,7 @@ menu:
   sidebar:
     name: k8s(component)
     identifier: k8s(component)
-    parent: CKA
+    parent: Kubernetes
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---
@@ -19,7 +19,7 @@ CKA 취득을 위해 이론적으로 공부한 내용들을 간단하게 기록�
 ```
 환경 : Amazon Linux 2 (t2 패밀리)
 k8s version : v1.21
-설치 방법 : Kubeadm | CNI : Calico
+설치 방법 : Kubeadm | CNI : Flannel
 
 ```
 

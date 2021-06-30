@@ -6,7 +6,7 @@ menu:
   sidebar:
     name: k8s(Ingress)
     identifier: k8s(Ingress)
-    parent: CKA
+    parent: Kubernetes
     weight: 10
 hero: images/CKA_thumnail.jpg
 ---

@@ -6,7 +6,7 @@ menu:
   sidebar:
     name: 😎About_dominic😎
     identifier: Posts
-    weight: 20
+    weight: 1
 ---
 시작합시다.😎 도며든다...도며든다...
 <!--more-->

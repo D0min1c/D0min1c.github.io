@@ -4,8 +4,8 @@ date: 2021-06-30
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: AWS이슈 (Host error)
-    identifier: AWS(Host_issue)
+    name: 세대를 교체중입니다. -AWS
+    identifier: 세대를 교체중입니다. -AWS
     parent: AWS
     weight: 10
 hero: images/host_thumnail.jpg

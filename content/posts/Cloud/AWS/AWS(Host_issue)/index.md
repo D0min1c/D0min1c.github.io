@@ -4,7 +4,7 @@ date: 2021-06-22
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: AWS이슈 (Host error)
+    name: AWS 이슈 (갑.서.박)
     identifier: AWS(Host_issue)
     parent: AWS
     weight: 10

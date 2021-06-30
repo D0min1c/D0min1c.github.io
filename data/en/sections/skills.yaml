@@ -14,7 +14,7 @@ skills:
 
 - name: Cloud Computing
   logo: /images/sections/skills/cloud.png
-  summary: "I have experience in operating in most major clouds such as GCP, AWS, Azure, and KT icloud, and AWS in particular has experienced various domestic customer cases."
+  summary: "I have experience in operating in most major clouds such as GCP, AWS, Azure, and KT cloud, and AWS in particular has experienced various domestic customer cases."
 
 - name: Prometheus & Grafana
   logo: /images/sections/skills/prometheus.png
@@ -36,6 +36,6 @@ skills:
 
 - name: Docker
   logo: /images/sections/skills/docker.svg
-  summary: "Write most of the programs as dockerized container. I know the environment and structure theoretically, but I have not experienced the actual production environment."
+  summary: "I know the environment and structure theoretically, but I have not experienced the actual production environment."
   url: "https://www.docker.com/"
 

@@ -10,7 +10,7 @@ menu:
     weight: 1
 hero: images/HO_thumnail.jpg
 ---
-찾기보기 쉽게 자주쓰는 명령어를 정리해두었습니다.
+찾아보기 쉽게 자주쓰는 명령어를 정리해두었습니다.
 <!--more-->
 ## Pod hands-on
 

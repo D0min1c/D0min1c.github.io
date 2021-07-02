@@ -18,12 +18,12 @@ company:
 #resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a passionate cloud infrastructure engineer with 3 years of hands-on experience.
-As an AWS Customer Support Engineer at Megazone Cloud, for about two years, I have been actively solving clients cloud-based issues and run their businesses smoothly.
+summary: 'I am a passionate cloud infrastructure engineer with 3 years of hands-on experience. 
+As an AWS Customer Support Engineer at Megazone Cloud, I have been actively resolving client cloud-based issues and running my business smoothly for about 2 years.
 
-But now I work for a game company.
-The main tasks are to operate the entire Cloud (AWS, GCP) infrastructure of the game, deploy directly through the Terraform module, and manage resource monitoring through Prometheus and Grafana.
-'
+But now I work for a game company. 
+
+Its main task is to operate the game entire cloud (AWS, GCP) infrastructure, deploy it directly via Terraform modules, and maintain the stability of the service through resource monitoring via Prometheus and Grafana.'
 # your social links
 # give as many as you want. use font-awesome for the icons.
 socialLinks:
@@ -65,12 +65,12 @@ badges:
 
 - type: soft-skill-indicator
   name: Management
-  percentage: 95
+  percentage: 75
   color: yellow
 
 - type: soft-skill-indicator
   name: Co-working
-  percentage: 80
+  percentage: 95
   color: orange
 
 # you can also provide color code instead of the color name

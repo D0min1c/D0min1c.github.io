@@ -1,9 +1,9 @@
 # section information
 section:
-  name: Projects
+  name: Achievements
   id: projects
   enable: true
-  weight: 5
+  weight: 3
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
@@ -21,15 +21,6 @@ buttons:
 
 # your projects
 projects:
-- name: Kubernetes study
-  logo: /images/sections/projects/kubernetes.png
-  role: k8s
-  timeline: "Jun 2021 - Present"
-  repo: https://d0min1c.github.io
-   # If your project is a public repo on GitHub, then provide this link. it will show star count.
-  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: CKA를 위한 여정 (210618~210815)
-  tags: ["CKA", "Certification"]
 
 - name: 2021 Planner
   logo: /images/sections/projects/cloud.png
@@ -41,6 +32,16 @@ projects:
   summary: 이번년도 일정에 대해
   tags: ["Certification", "hobby"]
 
+- name: Kubernetes study
+  logo: /images/sections/projects/kubernetes.png
+  role: k8s
+  timeline: "Jun 2021 - Present"
+  repo: https://d0min1c.github.io/post/Certification/CKA
+   # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: CKA를 위한 여정 (210618~210815)
+  tags: ["CKA", "Certification"]
+
 - name: Terraform on Cloud (GCP, AWS)
   logo: /images/sections/projects/terraform.png
   role: Infra management
@@ -50,7 +51,7 @@ projects:
   summary: GCP와 AWS 인프라 모듈화 (5%..5.333%..😂)
   tags: [ "cloud"]
 
-  
+#  
 #- name: AWS Beginner 모임
 #  logo: /images/sections/projects/beginner.jpg
 #  role: Just hobby

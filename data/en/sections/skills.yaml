@@ -1,41 +1,41 @@
 # section information
-section:
-  name: Skills
-  id: skills
-  enable: true
-  weight: 2
-  showOnNavbar: true
-  # Can optionally hide the title in sections
-  # hideTitle: true
+#section:
+#  name: Skills
+#  id: skills
+#  enable: true
+#  weight: 2
+#  showOnNavbar: true
+#  # Can optionally hide the title in sections
+#  # hideTitle: true
 
 # Your Skills.
 # Give a summary of you each skill in the summary section.
-skills:
+#skills:
 
-- name: Cloud Computing
-  logo: /images/sections/skills/cloud.png
-  summary: "I have experience in operating in most major clouds such as GCP, AWS, Azure, and KT cloud, and AWS in particular has experienced various domestic customer cases."
+#- name: Cloud Computing
+#  logo: /images/sections/skills/cloud.png
+#  summary: "I have experience in operating in most major clouds such as GCP, AWS, Azure, and KT cloud, and AWS in particular has experienced various domestic customer cases."
 
-- name: Prometheus & Grafana
-  logo: /images/sections/skills/prometheus.png
-  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
-  url: "https://prometheus.io/"
+#- name: Prometheus & Grafana
+#  logo: /images/sections/skills/prometheus.png
+#  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
+#  url: "https://prometheus.io/"
 
-- name: Linux
-  logo: /images/sections/skills/linux.png
-  summary: "Using as the main operating system. Capable of writing bash/shell scripts."
+#- name: Linux
+#  logo: /images/sections/skills/linux.png
+#  summary: "Using as the main operating system. Capable of writing bash/shell scripts."
 
-- name: Communication skills
-  logo: /images/sections/skills/git.png
-  summary: "I am confident in valuable collaboration that prioritizes problem solving for organizations or services."
+#- name: Communication skills
+#  logo: /images/sections/skills/git.png
+#  summary: "I am confident in valuable collaboration that prioritizes problem solving for organizations or services."
 
-- name: Kubernetes
-  logo: /images/sections/skills/kubernetes.png
-  summary: "Capable of deploying, managing application on Kubernetes.I know the environment and structure theoretically, but I have not experienced the actual production environment."
-  url: "https://kubernetes.io/"
+#- name: Kubernetes
+#  logo: /images/sections/skills/kubernetes.png
+#  summary: "Capable of deploying, managing application on Kubernetes.I know the environment and structure theoretically, but I have not experienced the actual production environment."
+#  url: "https://kubernetes.io/"
 
-- name: Docker
-  logo: /images/sections/skills/docker.svg
-  summary: "I know the environment and structure theoretically, but I have not experienced the actual production environment."
-  url: "https://www.docker.com/"
+#- name: Docker
+#  logo: /images/sections/skills/docker.svg
+#  summary: "I know the environment and structure theoretically, but I have not experienced the actual production environment."
+#  url: "https://www.docker.com/"
 

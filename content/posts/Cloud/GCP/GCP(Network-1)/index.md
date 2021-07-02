@@ -4,7 +4,7 @@ date: 2021-06-24
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: GCP-VPC 기초 1편
+    name: GCP-VPC
     identifier: GCP(Network-1)
     parent: GCP
     weight: 10
@@ -38,9 +38,7 @@ x.x.x.0 / x.x.x.1 / x.x.x.254 / x.x.x.255
 
 -------
 
-### 구조적 차이를 이해하자!
-
-![This is an image](images/aws_vpc.jpg)
+### 구조적 차이
 
 AWS는 말그대로 계층적인 구조를 가지고 있습니다.
 

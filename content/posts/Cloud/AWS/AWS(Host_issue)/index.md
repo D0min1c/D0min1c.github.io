@@ -148,7 +148,7 @@ AMI를 생성해서 다시 인스턴스를 구성할 경우 메인터넌스 이�
 CPU, memory (Custom Metric으로 받아와야합니다.), Volume IO 등 리소스 사용량과 콘솔 상에서 확인할 수 있는 시스템 로그를 통해 dmsg 로그 확인 및 본인이 마지막으로 서버에 무슨 작업을 했는지 확인해야하고 (어쩔때는 갑자기 DHCP서버에서 EC2가 IP를 못받아서 죽었던 경험도 있습니다. Network Manager issue 였죠..)
 
 ![This is an image](images/HF7.png)![This is an image](images/HF6.png)
-
+3
 
 시스템 상태검사 실패라면 재빠르게 stop/start 혹은 해당 이벤트를 트리거로 걸어두어 자동 reboot 작업을 걸어두는 것이 좋습니다.
 

@@ -4,7 +4,7 @@ date: 2021-06-25
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: GCP-LB
+    name: GCP-CLB
     identifier: GCP(Network-2)
     parent: GCP
     weight: 10

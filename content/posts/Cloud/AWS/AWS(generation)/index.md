@@ -4,7 +4,7 @@ date: 2021-06-30
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: 세대를 교체중입니다. -AWS
+    name: 인스턴스 세대교체 - AWS
     identifier: 세대를 교체중입니다. -AWS
     parent: AWS
     weight: 10

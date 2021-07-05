@@ -61,10 +61,9 @@ none : 모든 네트워킹 드라이버, 그 어떠한 인터페이스도 없는
 
 #### macvlan, ipvlan Networking
 말그대로 가상 mac주소를 할당하여 물리적 호스트처럼 보이도록 설정하거나, L2,L3 모드가 필요할 때 사용한다.
+macvlan은 브릿지가 없는 대신 서브 인터페이스라 하여 부모 인터페이스 (eth0)에서 여러 하위 인터페이스를 만들어서 다량의 MAC주소를 부여한다. 이 하위 인터페이스들이 각 컨테이너에 연결되면서 vlan을 구축하는 방식이다.
 
-### k8s Networking
 
-![This is an image](images/k8s_host.jpg)
 
 #### Pod Networking 
 Container Network에서 설명했듯이, 각각의 컨테이너는 독립적인 namesapce를 통해 격리되어진다.

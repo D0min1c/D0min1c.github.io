@@ -34,6 +34,7 @@ LB는 서비스지만 Ingress는 그런 서비스들에 대해 라우팅의 역�
 간단하게 Ingress L7, Service LB L4 정도로 ..!
 
 ### 테스트
+
 ```
 kubectl create deployment hello-app --image=gcr.io/google-samples/hello-app:1.0
 kubectl expose deployment hello-app  --port=8080.
@@ -43,6 +44,7 @@ kubectl get service
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
 hello-app    ClusterIP   10.43.254.28   <none>        8080/TCP   6s
 ```
+
 hello-app 애플리케이션을 배포하고 expose하여 서비스로 노출시킨다.
 
 #### NGINX 컨트롤러 사용

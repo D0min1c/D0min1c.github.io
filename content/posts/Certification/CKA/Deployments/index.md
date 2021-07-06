@@ -56,8 +56,8 @@ Events:
   ----    ------             ----  ----                   -------
   Normal  ScalingReplicaSet  96s   deployment-controller  Scaled up replica set frontend-deployment-56d8ff5458 to 4
 ```
+
 2. 틀린 YAML 찾기
-- 
 ```
 apiVersion: apps/v1
 kind: deployment <-> Deployment 대문자

@@ -4,7 +4,7 @@ date: 2021-07-05
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: 1-2 AMI의 모든 것
+    name: ㄴ AMI의 모든 것
     identifier: AWS_AMI
     parent: AWS_Beginners😆
     weight: 3

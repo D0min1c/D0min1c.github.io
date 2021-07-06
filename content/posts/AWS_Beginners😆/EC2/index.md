@@ -4,7 +4,7 @@ date: 2021-07-05
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: 1. EC2의 모든 것
+    name: EC2의 모든 것
     identifier: AWS_EC2
     parent: AWS_Beginners😆
     weight: 1

@@ -4,7 +4,7 @@ date: 2021-07-05
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
-    name: 1-1 EBS의 모든 것
+    name: ㄴ EBS의 모든 것
     identifier: AWS_Storage
     parent: AWS_Beginners😆
     weight: 2

@@ -18,8 +18,7 @@ AWS를 사용하시려는 모든 유저분들이 간단히 보기에 좋은 내�
 AWS를 시작하시는 분들을 위해 간단하게 EC2 라는 서비스에 대해 정리해보았습니다.
 가상화나 상세 기술내용은 도려낸 핵심적인 내용만 담아봤습니다.
 
-### EC2 개념 (Elastic Compute Cloud) (AKA. 인스턴스)
-
+### EC2 개념 (Elastic Compute Cloud)
 ![This is an image](images/instance.jpg)
 
 
@@ -30,7 +29,7 @@ AWS에서 운영하는 데이터 센터 내 여러 Host Server 위에 Hypervisor
 
 이러한 VM들을 AWS에서는 EC2라는 이름으로 사용자에게 제공합니다.
 
-### EC2 계산 (Elastic Compute Cloud) (AKA. 인스턴스)
+### EC2 계산 (Elastic Compute Cloud) 
 기본적으로 클라우드 컴퓨팅은 사용한 만큼 비용을 지불하는 방식이 적용됩니다. 마치 PC방처럼요.
 
 그런데, 제공함에 있어 비용적으로 선택할 수 있는 옵션이 4가지 있습니다.

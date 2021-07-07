@@ -17,7 +17,7 @@ AWS를 사용하시려는 모든 유저분들이 간단히 보기에 좋은 내�
 ## 배경
 AWS를 시작하시는 분들을 위해 간단하게 AWS 상 서비스되는 Storage 서비스들에 대해 정리해보았습니다.
 
-### AWS Storage 개념 (ElasticBlockService) (AKA. EBS)
+### AWS Storage 개념 (ElasticBlockService) 
 AWS에서는 여러 스토리지 서비스를 제공합니다. 그중 EC2를 생성함에 있어서 루트 디바이스가 되는 Elastic Block Storage에 대해 알아보고자합니다.
 기본적으로 EBS는 EC2 에서 사용하도록 설계된 사용하기 쉬운 *원격* 블록 스토리지 서비스입니다.
 EBS 볼륨은 AZ(가용 영역) 내에서 복제되기에 장애로부터 99.999%의 가용성을 보장합니다. 
@@ -44,7 +44,7 @@ Insatnce Store는 Host Computer에 물리적으로 연결되어있는 디스크�
 분리| 가능 | 불가능
 인스턴스 종료 시 | 유지 가능 | 유지 불가능
 
-### EBS 성능 (ElasticBlockService) (AKA. EBS)
+### EBS 성능 (ElasticBlockService)
 EBS 볼륨의 성능을 측정할 때는 관련된 측정 단위와 성능 계산 방법을 이해해야 합니다.
 IOPS를 기준으로 성능을 좌우합니다. 아래 AWS에서 제공하는 성능비교 링크를 통해 각 유형이 어떤 타입과 성능을 제공하는지 확인할 수 있습니다.
 

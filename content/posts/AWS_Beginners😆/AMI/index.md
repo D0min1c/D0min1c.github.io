@@ -17,8 +17,7 @@ AWS를 사용하시려는 모든 유저분들이 간단히 보기에 좋은 내�
 ## 배경
 AWS를 시작하시는 분들을 위해 간단하게 AMI에 대해 정리해보았습니다.
 
-### AMI 개념 (Amazon Machine Image) (AKA. AMI)
-
+### AMI 개념 (Amazon Machine Image) 
 ![This is an image](images/ami.jpg)
 
 Amazon 머신 이미지(AMI)는 인스턴스를 시작하는 데 필요한 정보를 제공합니다. 인스턴스를 시작할 때 AMI를 지정해야 합니다.

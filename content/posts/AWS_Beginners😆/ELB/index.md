@@ -46,6 +46,7 @@ ELB는 AWS의 로드밸런싱 서비스입니다.
 
 ### ELB 동작방식
 ![This is an image](images/lb_6.jpg)
+
 우선 동작방식을 알아보기위해 test-LB들을 생성해보겠습니다.
 
 #### ALB 생성
